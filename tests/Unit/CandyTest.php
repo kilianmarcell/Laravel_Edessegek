@@ -42,7 +42,7 @@ class CandyTest extends TestCase
             ]
         ]);
 
-        $this->assertEquals(3, Candy::csokisakTartalma());
+        $this->assertEquals(3, Candy::csokisakCukorTartalma());
     }
 
     public function test_multiple_chocolate_candies_no_chocolate() {
@@ -55,10 +55,14 @@ class CandyTest extends TestCase
             [
                 'name' => 'Hard Candy',
                 'cocoa_content' => 0,
-                'sugar_content' => 0
+                'sugar_content' => 4
             ]
         ]);
 
-        $this->assertEquals(2, Candy::csokisakTartalma());
+        $this->assertEquals(2, Candy::csokisakCukorTartalma());
+    }
+
+    public function test_no_chocolate() {
+        $this->assertNan(Candy::csokisakCukorTartalma());
     }
 }
