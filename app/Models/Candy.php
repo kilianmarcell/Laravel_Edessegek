@@ -41,4 +41,13 @@ class Candy extends Model
 
         return $atlag;
     }
+
+    public static function cukorCsokiMentes() {
+
+        return Candy::where([
+                ['sugar_content', '=', 0],
+                ['cocoa_content', '=', 0]
+            ])
+            ->count();
+    }
 }
