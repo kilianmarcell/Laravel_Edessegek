@@ -23,7 +23,7 @@ class CandyTest extends TestCase
     //    $this->assertEquals(2, Candy::csokisakTartalma());
     //}
 
-    public function test_one_chocolate_candy() {
+    public function test_multiple_chocolate_candy() {
         Candy::factory()->createMany([
             [
                 'name' => 'Chocolate',
@@ -43,5 +43,22 @@ class CandyTest extends TestCase
         ]);
 
         $this->assertEquals(3, Candy::csokisakTartalma());
+    }
+
+    public function test_multiple_chocolate_candies_no_chocolate() {
+        Candy::factory()->createMany([
+            [
+                'name' => 'Chocolate',
+                'cocoa_content' => 12.5,
+                'sugar_content' => 2
+            ],
+            [
+                'name' => 'Hard Candy',
+                'cocoa_content' => 0,
+                'sugar_content' => 0
+            ]
+        ]);
+
+        $this->assertEquals(2, Candy::csokisakTartalma());
     }
 }

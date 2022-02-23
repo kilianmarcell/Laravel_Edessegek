@@ -14,6 +14,20 @@ class Candy extends Model
     ];
 
     public static function csokisakTartalma() {
-        return Candy::all()->avg('sugar_content');
+        //$candies = Candy::all();
+
+        //$sum = 0;
+        //$count = 0;
+
+        //foreach ($candies as $c) {
+        //    if ($candies->cocoa_content > 0) {
+        //        $sum += $c->sugar_content;
+        //        $count++;
+        //    }
+        //}
+
+        //return $sum / $count;
+
+        return Candy::where('cocoa_content', '>', 0)->avg('sugar_content');
     }
 }
