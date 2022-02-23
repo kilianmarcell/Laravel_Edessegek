@@ -9,6 +9,11 @@ class Candy extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'name', 'cocoa_content', 'sugar_content'
+    ];
+
     public static function csokisakTartalma() {
+        return Candy::all()->avg('sugar_content');
     }
 }
