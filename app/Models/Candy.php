@@ -50,4 +50,10 @@ class Candy extends Model
             ])
             ->count();
     }
+
+    public static function legkisebbCukor() {
+
+        return Candy::where('sugar_content', '>', 0)
+            ->min('sugar_content');
+    }
 }

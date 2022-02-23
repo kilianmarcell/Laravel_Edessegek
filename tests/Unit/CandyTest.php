@@ -46,6 +46,7 @@ class CandyTest extends TestCase
             ]
         ]);
 
+        $this->assertEquals(1, Candy::legkisebbCukor());
         $this->assertEquals(0, Candy::cukorCsokiMentes());
         $this->assertEquals(3, Candy::csokisakCukorTartalma());
     }
@@ -64,6 +65,7 @@ class CandyTest extends TestCase
             ]
         ]);
 
+        $this->assertEquals(2, Candy::legkisebbCukor());
         $this->assertEquals(0, Candy::cukorCsokiMentes());
         $this->assertEquals(2, Candy::csokisakCukorTartalma());
     }
@@ -92,6 +94,7 @@ class CandyTest extends TestCase
             ]
         ]);
 
+        $this->assertEquals(2, Candy::legkisebbCukor());
         $this->assertEquals(2, Candy::cukorCsokiMentes());
         $this->assertEquals(1, Candy::csokisakCukorTartalma());
     }
