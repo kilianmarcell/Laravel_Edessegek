@@ -25,6 +25,8 @@ class CandyTest extends TestCase
 
     public function test_no_chocolate() {
         $this->assertNan(Candy::csokisakCukorTartalma());
+        $this->assertNan(Candy::legkisebbCukor());
+        $this->assertEquals(0, Candy::cukorCsokiMentes());
     }
 
     public function test_multiple_chocolate_candy() {
