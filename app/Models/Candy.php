@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Candy extends Model
 {
     use HasFactory;
+
+    public static function csokisakTartalma() {
+    }
 }
