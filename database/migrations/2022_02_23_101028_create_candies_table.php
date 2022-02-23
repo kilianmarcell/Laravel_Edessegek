@@ -15,6 +15,9 @@ return new class extends Migration
     {
         Schema::create('candies', function (Blueprint $table) {
             $table->id();
+            $table->string("name");
+            $table->decimal("cocoa_content");
+            $table->decimal("sugar_content");
             $table->timestamps();
         });
     }
